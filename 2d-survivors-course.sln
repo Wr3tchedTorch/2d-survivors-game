@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2d-survivors-course", "2d-survivors-course.csproj", "{DCA05A8E-D192-4178-9461-E0F4AF794D50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{DCA05A8E-D192-4178-9461-E0F4AF794D50}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
