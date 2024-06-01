@@ -22,12 +22,16 @@ public partial class SwordAbilityController : Node
 		enemies = enemies.Where(
 			enemy => enemy.GlobalPosition.DistanceSquaredTo(player.GlobalPosition) < Math.Pow(_MAX_RANGE, 2));
 
-		if (enemies.Count() == 0) return;
+		if (!enemies.Any()) return;
 
-		enemies.OrderBy((Node2D enemy) => enemy.GlobalPosition.DistanceSquaredTo(player.GlobalPosition));
+		enemies = enemies.OrderBy((Node2D enemy) => enemy.GlobalPosition.DistanceSquaredTo(player.GlobalPosition));
 
 		var swordInstance = SwordAbility.Instantiate<Node2D>();
 		player.GetParent().AddChild(swordInstance);
 		swordInstance.GlobalPosition = enemies.First().GlobalPosition;
+		swordInstance.GlobalPosition += Vector2.Right.Rotated((float)(new Random().NextDouble() * Math.Tau)) * 8;
+
+		var enemyDirection = enemies.First().GlobalPosition - swordInstance.GlobalPosition;
+		swordInstance.Rotation = enemyDirection.Angle();
 	}
 }

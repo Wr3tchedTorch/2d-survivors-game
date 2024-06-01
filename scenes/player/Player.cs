@@ -3,12 +3,14 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	private const int _MAX_SPEED = 200;
+	private const int _MAX_SPEED = 125;
+	private const int ACCELERATION_SMOOTHING = 25;
 
 	public override void _Process(double delta)
 	{
 		Vector2 dir = GetMovementVector().Normalized();
-		Velocity = dir * _MAX_SPEED;
+		var target_velocity = dir * _MAX_SPEED;
+		Velocity = Velocity.Lerp(target_velocity, (float)(1 - Math.Exp(-delta * ACCELERATION_SMOOTHING)));
 		MoveAndSlide();
 	}
 

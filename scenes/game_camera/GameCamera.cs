@@ -10,7 +10,7 @@ public partial class GameCamera : Camera2D
 	public override void _Process(double delta)
 	{
 		AcquireTarget();
-		GlobalPosition = GlobalPosition.Lerp(_targetPosition, 1f - (float) Math.Exp(-delta * 10));
+		GlobalPosition = GlobalPosition.Lerp(_targetPosition, 1f - (float) Math.Exp(-delta * 20));
 	}
 
 	private void AcquireTarget()
