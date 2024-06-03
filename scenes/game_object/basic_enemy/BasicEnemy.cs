@@ -4,10 +4,11 @@ using System;
 public partial class BasicEnemy : CharacterBody2D
 {
 	private const int _MAX_SPEED = 50;
-
+	private HealthComponent HealthComponent;
     public override void _Ready()
     {
         GetNode<Area2D>("Area2D").AreaEntered += OnAreaEntered;
+		HealthComponent = GetNode<HealthComponent>("HealthComponent");
     }
 
     public override void _Process(double delta)
@@ -24,6 +25,6 @@ public partial class BasicEnemy : CharacterBody2D
 	}
 
 	public void OnAreaEntered(Area2D other) {
-		QueueFree();
+		HealthComponent.Damage(100);
 	}
 }

@@ -12,7 +12,9 @@ public partial class ExperienceVial : Node2D
 	{
 	}
 
-	public void OnAreaEntered(Area2D area) {
+	public void OnAreaEntered(Area2D area)
+	{
+		GetNode<GameEvents>("/root/GameEvents").EmitExperienceVialCollected(1);
 		QueueFree();
 	}
 }
